@@ -14,6 +14,17 @@ app = Flask(__name__)
 def home():
     return render_template('gui.html')
 
+@app route('/look/<item>')
+def look(item):
+    if item == 'door':
+        pantilthat.pan(0)
+        pantilthat.tilt(0)
+        return "viewing door"
+    elif item == 'workshop'
+        pantilthat.pan(90)
+        pantilthat.tilt(45)
+        return "viewing workshop"
+
 @app.route('/api/<direction>/<int:angle>')
 def api(direction, angle):
     if angle < 0 or angle > 180:
