@@ -2,6 +2,7 @@
 
 import pantilthat
 from sys import exit
+import time
 
 try:
     from flask import Flask, render_template
@@ -19,10 +20,13 @@ def look(item):
     if item == 'door':
         pantilthat.pan(0)
         pantilthat.tilt(0)
+        time.sleep(1)
         return "viewing door"
+    
     elif item == 'workshop'
         pantilthat.pan(90)
         pantilthat.tilt(45)
+        time.sleep(1)
         return "viewing workshop"
 
 @app.route('/api/<direction>/<int:angle>')
